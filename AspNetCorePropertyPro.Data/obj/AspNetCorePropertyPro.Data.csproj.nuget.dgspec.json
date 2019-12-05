@@ -4,14 +4,14 @@
     "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\AspNetCorePropertyPro.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\AspNetCorePropertyPro.Data.csproj": {
+    "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\AspNetCorePropertyPro.Data.csproj",
-        "projectName": "AspNetCorePropertyPro.Data",
-        "projectPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\AspNetCorePropertyPro.Data.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj",
+        "projectName": "AspNetCorePropertyPro.Core",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\obj\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,6 +42,113 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\AspNetCorePropertyPro.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\AspNetCorePropertyPro.Data.csproj",
+        "projectName": "AspNetCorePropertyPro.Data",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\AspNetCorePropertyPro.Data.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj": {
+                "projectPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Sendgrid": {
+              "target": "Package",
+              "version": "[9.12.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
