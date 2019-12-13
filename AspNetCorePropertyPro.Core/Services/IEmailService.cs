@@ -7,6 +7,13 @@ namespace AspNetCorePropertyPro.Core.Services
 {
     public interface IEmailService
     {
-        Task SendMailAsync(string mailBody, string toMailAddress);
+        /// <summary>
+        /// Send email message to user
+        /// </summary>
+        /// <param name="toAddress">The email address you are sending the mail to.</param>
+        /// <param name="subject">The subject of the mail</param>
+        /// <param name="body"> The content of the mail</param>
+        /// <returns></returns>
+        Task SendMailAsync(string toAddress, string subject, string body);
     }
 }

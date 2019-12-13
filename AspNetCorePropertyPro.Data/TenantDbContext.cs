@@ -23,9 +23,9 @@ namespace AspNetCorePropertyPro.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var conn = "Server=(localDB)\\MSSqlLocalDB; database=PPTenantThree; Integrated Security=true";
-            optionsBuilder.UseSqlServer(conn);
-            // optionsBuilder.UseSqlServer(_tenant.ConnectionString);
+            //var conn = @"Server=(localDB)\MSSqlLocalDB; database=PPTenantOne; Integrated Security=true";
+            //optionsBuilder.UseSqlServer(conn);
+            optionsBuilder.UseSqlServer(_tenant.ConnectionString);
             base.OnConfiguring(optionsBuilder);
         }
     }

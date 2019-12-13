@@ -18,7 +18,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.Swagger;
+using AutoMapper;
+using System.Reflection;
+using System.IO;
+using AspNetCorePropertyPro.Core.Configurations;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using AspNetCorePropertyPro.Core.Services;
+using AspNetCorePropertyPro.Services;
+using AspNetCorePropertyPro.Core.Repositories;
+using AspNetCorePropertyPro.Data.Repositories;
 
 namespace AspNetCorePropertyPro.Api
 {
@@ -34,21 +44,59 @@ namespace AspNetCorePropertyPro.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            var jwtSetting = new JwtSetting();
+            var sendGridSetting = new SendGridSetting();
+
+            Configuration.Bind(nameof(jwtSetting), jwtSetting);
+            Configuration.Bind(nameof(sendGridSetting), sendGridSetting);
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton(jwtSetting);
+            services.AddSingleton(sendGridSetting);
 
             services.AddDbContext<GlobalDbContext>(c => 
                 c.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<TenantDbContext>();
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<TenantDbContext>();
+            services.AddCors();
 
+            services.AddIdentity<ApplicationUser, IdentityRole>(
+                opt =>
+                {
+                    opt.SignIn.RequireConfirmedEmail = true;
+                })
+                .AddEntityFrameworkStores<TenantDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<IAuthService, AuthService>();
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(opt=>
+            {
+                opt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSetting.Secret))
+                };
+            });
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup).Assembly);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Property Pro API", Version = "v1" });
                 c.OperationFilter<TenantHeaderOperationFilter>();
+                
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
@@ -59,8 +107,10 @@ namespace AspNetCorePropertyPro.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseHttpsRedirection();
             app.UseTenantIdentifier();
+            app.UseStaticFiles();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -69,7 +119,7 @@ namespace AspNetCorePropertyPro.Api
             });
             app.UseRouting();
 
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

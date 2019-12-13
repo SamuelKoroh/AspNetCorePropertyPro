@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj": {}
+    "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj": {
+    "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj",
+        "projectUniqueName": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj",
         "projectName": "AspNetCorePropertyPro.Tests",
-        "projectPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\source\\repos\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\obj\\",
+        "projectPath": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj",
+        "packagesPath": "C:\\Users\\Sam\\.nuget\\packages\\",
+        "outputPath": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -70,6 +70,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -78,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

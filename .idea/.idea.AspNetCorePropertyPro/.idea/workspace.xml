@@ -2,43 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58e9cb77-cc45-4917-adec-a13d1f3f7c63" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AspNetCorePropertyPro/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AspNetCorePropertyPro/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetCorePropertyPro/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetCorePropertyPro/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AspNetCorePropertyPro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AspNetCorePropertyPro/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/AspNetCorePropertyPro/DesignTimeBuild/.dtbcache" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/AspNetCorePropertyPro/DesignTimeBuild/.dtbcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/AspNetCorePropertyPro/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/AspNetCorePropertyPro/config/applicationhost.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/AspNetCorePropertyPro/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/AspNetCorePropertyPro/v16/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/AspNetCorePropertyPro/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/AspNetCorePropertyPro/v16/Server/sqlite3/storage.ide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/AspNetCorePropertyPro.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/AspNetCorePropertyPro.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/AspNetCorePropertyPro.Api.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/AspNetCorePropertyPro.Api.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/Controllers/PropertysController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/Controllers/PropertysController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/bin/Debug/netcoreapp3.0/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/bin/Debug/netcoreapp3.0/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/bin/Debug/netcoreapp3.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/bin/Debug/netcoreapp3.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/AspNetCorePropertyPro.Api.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/AspNetCorePropertyPro.Api.csproj.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/AspNetCorePropertyPro.Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/AspNetCorePropertyPro.Api.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/AspNetCorePropertyPro.Api.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/AspNetCorePropertyPro.Api.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/AspNetCorePropertyPro.Api.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/AspNetCorePropertyPro.Api.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Api.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Api.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Api.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Api.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Api.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Api/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/AspNetCorePropertyPro.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/AspNetCorePropertyPro.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/Services/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/Services/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/Services/IEmailService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/Services/IEmailService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/AspNetCorePropertyPro.Core.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/AspNetCorePropertyPro.Core.csproj.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/AspNetCorePropertyPro.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/AspNetCorePropertyPro.Core.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/AspNetCorePropertyPro.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/AspNetCorePropertyPro.Core.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Core.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Core.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Core.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Core/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/AspNetCorePropertyPro.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/AspNetCorePropertyPro.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/TenantDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/TenantDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/AspNetCorePropertyPro.Data.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/AspNetCorePropertyPro.Data.csproj.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/AspNetCorePropertyPro.Data.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/AspNetCorePropertyPro.Data.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/AspNetCorePropertyPro.Data.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/AspNetCorePropertyPro.Data.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Data.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Data.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Data.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Data.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Data/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/AspNetCorePropertyPro.Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/AspNetCorePropertyPro.Services.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/AuthService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/AspNetCorePropertyPro.Services.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/AspNetCorePropertyPro.Services.csproj.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/AspNetCorePropertyPro.Services.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/AspNetCorePropertyPro.Services.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/AspNetCorePropertyPro.Services.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/AspNetCorePropertyPro.Services.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Services.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Services.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Services/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/AspNetCorePropertyPro.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/AspNetCorePropertyPro.Tests.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/AspNetCorePropertyPro.Tests.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/AspNetCorePropertyPro.Tests.csproj.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/AspNetCorePropertyPro.Tests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/AspNetCorePropertyPro.Tests.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/AspNetCorePropertyPro.Tests.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/AspNetCorePropertyPro.Tests.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/AspNetCorePropertyPro.Tests.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/AspNetCorePropertyPro.Tests.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Tests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/Debug/netcoreapp3.0/AspNetCorePropertyPro.Tests.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AspNetCorePropertyPro.Tests/obj/project.assets.json" afterDir="false" />
     </list>
@@ -48,113 +58,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/AspNetCorePropertyPro.Data.csproj">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/GlobalDbContext.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-              <folding>
-                <marker date="1575384309165" expanded="true" signature="36:204" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/TenantsDbContext.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-              <folding>
-                <marker date="1575386815701" expanded="true" signature="50:228" ph="{...}" />
-                <marker date="1575386815701" expanded="true" signature="98:226" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Core/Models/Tenant.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FavoritesManager">
+    <favorites_list name="AspNetCorePropertyPro" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Api/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Core/Models/Tenant.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/GlobalDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/TenantsDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Core/Models/Tenant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/TenantDbContext.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/AspNetCorePropertyPro.Data/TenantsDbContext.cs" />
+        <option value="$PROJECT_DIR$/AspNetCorePropertyPro.Data/TenantDbContext.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-57" />
-    <option name="y" value="-13" />
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
-  </component>
+  <component name="ProjectId" id="1UmPemDANSuXjOfbrD0daA3cNUh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="SolutionExplorer" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="AspNetCorePropertyPro" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="AspNetCorePropertyPro" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="AspNetCorePropertyPro.Api" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="AspNetCorePropertyPro" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="AspNetCorePropertyPro.Api" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="FileSystemExplorer" />
-      <pane id="AssemblyExplorer" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -211,56 +143,32 @@
       <option name="presentableId" value="Default" />
       <updated>1575385359199</updated>
       <workItem from="1575385431244" duration="935000" />
+      <workItem from="1575916188514" duration="602000" />
+      <workItem from="1575916861343" duration="464000" />
+      <workItem from="1575921745952" duration="233000" />
+      <workItem from="1575958905415" duration="1932000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="935000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24263039" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="REST Client" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Performance Profiler" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Unit Tests Coverage" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -270,54 +178,5 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/AspNetCorePropertyPro.Data.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/GlobalDbContext.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-          <folding>
-            <marker date="1575384309165" expanded="true" signature="36:204" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Api/Controllers/WeatherForecastController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <marker date="1575275379603" expanded="false" signature="6:164" ph="..." />
-            <marker date="1575275379603" expanded="true" signature="213:1155" ph="{...}" />
-            <marker date="1575275379603" expanded="true" signature="323:1153" ph="{...}" />
-            <marker date="1575275379603" expanded="true" signature="397:519" ph="{...}" />
-            <marker date="1575275379603" expanded="true" signature="675:725" ph="{...}" />
-            <marker date="1575275379603" expanded="true" signature="794:1147" ph="{...}" />
-            <marker date="1575275379603" expanded="true" signature="931:1112" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Core/Models/Tenant.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AspNetCorePropertyPro.Data/TenantsDbContext.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding>
-            <marker date="1575386815701" expanded="true" signature="50:228" ph="{...}" />
-            <marker date="1575386815701" expanded="true" signature="98:226" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
