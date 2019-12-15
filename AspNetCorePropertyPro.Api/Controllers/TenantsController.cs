@@ -19,15 +19,18 @@ namespace AspNetCorePropertyPro.Api.Controllers
             this.globalDbContext = globalDbContext;
         }
         [HttpPost("register")]
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
-            var tenant = globalDbContext.Tenants.Add(new Core.Models.Tenant
+            var tenant = new Core.Models.Tenant
             {
                 Name = "tenant1",
                 HostName = "tenant1",
-                ConnectionString = "PPTenantOne"
-            });
-            globalDbContext.SaveChanges();
+                ConnectionString = "Server=tcp:aspnetpropertypro.database.windows.net,1433;Initial Catalog=Tenant1DB;Persist Security Info=False;User ID=propertyproadmin;Password=admin@2012;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+            };
+
+            await globalDbContext.Tenants.AddAsync(tenant);
+            await globalDbContext.SaveChangesAsync();
+
             return Ok(tenant);
         }
     }

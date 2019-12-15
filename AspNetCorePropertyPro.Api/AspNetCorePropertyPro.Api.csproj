@@ -22,10 +22,20 @@
     <ProjectReference Include="..\AspNetCorePropertyPro.Data\AspNetCorePropertyPro.Data.csproj" />
     <ProjectReference Include="..\AspNetCorePropertyPro.Services\AspNetCorePropertyPro.Services.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assests\Templates\confirm-email.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assests\Templates\reset-password.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
+    <UserSecretsId>e4c90ab4-d354-4f2b-87b0-8446cac10198</UserSecretsId>
   </PropertyGroup>
   
 </Project>

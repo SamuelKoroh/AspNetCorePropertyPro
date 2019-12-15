@@ -275,3 +275,5 @@ C:\demo\AspNetCore\AspNetCorePropertyPro\AspNetCorePropertyPro.Api\obj\Debug\net
 C:\demo\AspNetCore\AspNetCorePropertyPro\AspNetCorePropertyPro.Api\obj\Debug\netcoreapp3.0\AspNetCorePropertyPro.Api.dll
 C:\demo\AspNetCore\AspNetCorePropertyPro\AspNetCorePropertyPro.Api\obj\Debug\netcoreapp3.0\AspNetCorePropertyPro.Api.xml
 C:\demo\AspNetCore\AspNetCorePropertyPro\AspNetCorePropertyPro.Api\obj\Debug\netcoreapp3.0\AspNetCorePropertyPro.Api.pdb
+C:\demo\AspNetCore\AspNetCorePropertyPro\AspNetCorePropertyPro.Api\bin\Debug\netcoreapp3.0\Assests\Templates\confirm-email.html
+C:\demo\AspNetCore\AspNetCorePropertyPro\AspNetCorePropertyPro.Api\bin\Debug\netcoreapp3.0\Assests\Templates\reset-password.html

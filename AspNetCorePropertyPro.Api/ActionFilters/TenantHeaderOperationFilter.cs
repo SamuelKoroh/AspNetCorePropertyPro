@@ -23,7 +23,7 @@ namespace AspNetCorePropertyPro.Api.ActionFilters
                 Required = true,
                 Schema = new OpenApiSchema{
                    Type ="string",
-                   Default = new OpenApiString("")
+                   Default = new OpenApiString("b0ed668d-7ef2-4a23-a333-94ad278f45d7")
                 }
             });
         }
