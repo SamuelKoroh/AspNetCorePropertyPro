@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="FluentValidation" Version="8.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
@@ -18,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AspNetCorePropertyPro.Configuration\AspNetCorePropertyPro.Configuration.csproj" />
     <ProjectReference Include="..\AspNetCorePropertyPro.Core\AspNetCorePropertyPro.Core.csproj" />
     <ProjectReference Include="..\AspNetCorePropertyPro.Data\AspNetCorePropertyPro.Data.csproj" />
     <ProjectReference Include="..\AspNetCorePropertyPro.Services\AspNetCorePropertyPro.Services.csproj" />

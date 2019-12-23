@@ -1,9 +1,10 @@
-﻿using AspNetCorePropertyPro.Core.Configurations;
+﻿using AspNetCorePropertyPro.Configuration;
 using AspNetCorePropertyPro.Core.Models;
 using AspNetCorePropertyPro.Core.Response;
 using AspNetCorePropertyPro.Core.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -19,9 +20,9 @@ namespace AspNetCorePropertyPro.Services
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IEmailService _emailService;
-        private readonly JwtSetting _jwtSetting;
+        private readonly IOptions<JwtSetting> _jwtSetting;
 
-        public AuthService(UserManager<ApplicationUser> userManager, IEmailService emailService, JwtSetting jwtSetting)
+        public AuthService(UserManager<ApplicationUser> userManager, IEmailService emailService, IOptions<JwtSetting> jwtSetting)
         {
             _userManager = userManager;
             _emailService = emailService;
@@ -146,7 +147,7 @@ namespace AspNetCorePropertyPro.Services
 
         private string CreateUserToken(ApplicationUser user)
         {
-            var key = Encoding.ASCII.GetBytes(_jwtSetting.Secret);
+            var key = Encoding.ASCII.GetBytes(_jwtSetting.Value.Secret);
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenDescriptor = new SecurityTokenDescriptor
             {

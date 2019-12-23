@@ -21,7 +21,7 @@ using Microsoft.OpenApi.Models;
 using AutoMapper;
 using System.Reflection;
 using System.IO;
-using AspNetCorePropertyPro.Core.Configurations;
+using AspNetCorePropertyPro.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -29,6 +29,8 @@ using AspNetCorePropertyPro.Core.Services;
 using AspNetCorePropertyPro.Services;
 using AspNetCorePropertyPro.Core.Repositories;
 using AspNetCorePropertyPro.Data.Repositories;
+using Microsoft.Extensions.Options;
+using AspNetCorePropertyPro.Core;
 
 namespace AspNetCorePropertyPro.Api
 {
@@ -44,16 +46,10 @@ namespace AspNetCorePropertyPro.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            var jwtSetting = new JwtSetting();
-            var sendGridSetting = new SendGridSetting();
-
-            Configuration.Bind(nameof(jwtSetting), jwtSetting);
-            Configuration.Bind(nameof(sendGridSetting), sendGridSetting);
-
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton(jwtSetting);
-            services.AddSingleton(sendGridSetting);
+            services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));
+            services.Configure<SendGridSetting>(Configuration.GetSection("SendGridSetting"));
+            services.Configure<CloudinarySetting>(Configuration.GetSection("CloudinarySetting"));
 
             services.AddDbContext<GlobalDbContext>(c => 
                 c.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -61,6 +57,8 @@ namespace AspNetCorePropertyPro.Api
             services.AddDbContext<TenantDbContext>();
 
             services.AddCors();
+            services.AddControllers();
+            services.AddAutoMapper(typeof(Startup).Assembly);
 
             services.AddIdentity<ApplicationUser, IdentityRole>(
                 opt =>
@@ -72,6 +70,9 @@ namespace AspNetCorePropertyPro.Api
 
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IPropertyTypeService, PropertyTypeService>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -84,16 +85,36 @@ namespace AspNetCorePropertyPro.Api
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSetting.Secret))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(
+                            Configuration.GetSection("JwtSetting:Secret").Value))
                 };
             });
-            services.AddControllers();
-            services.AddAutoMapper(typeof(Startup).Assembly);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Property Pro API", Version = "v1" });
                 c.OperationFilter<TenantHeaderOperationFilter>();
-                
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "Jwt Athpurization header bearer token",
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme{ 
+                        Reference = new OpenApiReference
+                        { 
+                            Type=ReferenceType.SecurityScheme,
+                            Id="Bearer"
+                        } }, 
+                        new List<string>() 
+                    }
+                });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);

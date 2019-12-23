@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj": {}
+    "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj": {}
   },
   "projects": {
-    "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj": {
+    "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj",
+        "projectUniqueName": "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj",
         "projectName": "AspNetCorePropertyPro.Tests",
-        "projectPath": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj",
-        "packagesPath": "C:\\Users\\Sam\\.nuget\\packages\\",
-        "outputPath": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\obj\\",
+        "projectPath": "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\AspNetCorePropertyPro.Tests.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -70,12 +70,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

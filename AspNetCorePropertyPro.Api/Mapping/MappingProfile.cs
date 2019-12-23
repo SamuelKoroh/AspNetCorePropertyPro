@@ -1,4 +1,5 @@
 ﻿using AspNetCorePropertyPro.Api.Resources;
+using AspNetCorePropertyPro.Api.Resources.PropertyType;
 using AspNetCorePropertyPro.Core.Models;
 using AutoMapper;
 using System;
@@ -15,6 +16,8 @@ namespace AspNetCorePropertyPro.Api.Mapping
             //Resource to domian model
             CreateMap<RegisterResource, ApplicationUser>()
                 .ForMember(d => d.UserName, opt => opt.MapFrom(s => s.Email));
+
+            CreateMap<SavePropertyTypeResource, PropertyType>();
         }
     }
 }

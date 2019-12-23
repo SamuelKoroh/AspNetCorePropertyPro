@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePropertyPro.Api", "AspNetCorePropertyPro.Api\AspNetCorePropertyPro.Api.csproj", "{64CFADA4-59DB-4942-BCB0-AF6CD33F92EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePropertyPro.Api", "AspNetCorePropertyPro.Api\AspNetCorePropertyPro.Api.csproj", "{64CFADA4-59DB-4942-BCB0-AF6CD33F92EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePropertyPro.Data", "AspNetCorePropertyPro.Data\AspNetCorePropertyPro.Data.csproj", "{4E1069EE-63E4-41EA-B7E6-9589DEB51DB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePropertyPro.Data", "AspNetCorePropertyPro.Data\AspNetCorePropertyPro.Data.csproj", "{4E1069EE-63E4-41EA-B7E6-9589DEB51DB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePropertyPro.Core", "AspNetCorePropertyPro.Core\AspNetCorePropertyPro.Core.csproj", "{645AAD31-7974-47B6-B62E-C1DC35F7F17B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePropertyPro.Core", "AspNetCorePropertyPro.Core\AspNetCorePropertyPro.Core.csproj", "{645AAD31-7974-47B6-B62E-C1DC35F7F17B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePropertyPro.Services", "AspNetCorePropertyPro.Services\AspNetCorePropertyPro.Services.csproj", "{583B4C10-C914-4F3D-9338-61C4962DF998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePropertyPro.Services", "AspNetCorePropertyPro.Services\AspNetCorePropertyPro.Services.csproj", "{583B4C10-C914-4F3D-9338-61C4962DF998}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePropertyPro.Tests", "AspNetCorePropertyPro.Tests\AspNetCorePropertyPro.Tests.csproj", "{9117595F-110E-4DB2-B034-895D35B79658}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePropertyPro.Tests", "AspNetCorePropertyPro.Tests\AspNetCorePropertyPro.Tests.csproj", "{9117595F-110E-4DB2-B034-895D35B79658}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePropertyPro.Configuration", "AspNetCorePropertyPro.Configuration\AspNetCorePropertyPro.Configuration.csproj", "{1E05FA94-5AF1-4C6A-B73C-5334FA82A580}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9117595F-110E-4DB2-B034-895D35B79658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9117595F-110E-4DB2-B034-895D35B79658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9117595F-110E-4DB2-B034-895D35B79658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E05FA94-5AF1-4C6A-B73C-5334FA82A580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E05FA94-5AF1-4C6A-B73C-5334FA82A580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E05FA94-5AF1-4C6A-B73C-5334FA82A580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E05FA94-5AF1-4C6A-B73C-5334FA82A580}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

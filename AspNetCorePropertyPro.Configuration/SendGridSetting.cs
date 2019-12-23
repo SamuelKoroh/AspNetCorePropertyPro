@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace AspNetCorePropertyPro.Core.Configurations
+namespace AspNetCorePropertyPro.Configuration
 {
     public class SendGridSetting
     {
