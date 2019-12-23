@@ -11,5 +11,9 @@ namespace AspNetCorePropertyPro.Core.Services
         Task<DealType> CreateDealType(DealType dealType);
         Task<DealType> UpdateDealType(DealType dealTypeToUpdate, DealType dealType);
         Task DeleteDealType(DealType dealType);
+        Task<DealType> FindDealTypeByName(string name);
+        Task<DealType> FindDealTypeById(int id);
+        Task<IEnumerable<DealType>> GetAllDealType();
+
     }
 }

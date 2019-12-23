@@ -71,6 +71,7 @@ namespace AspNetCorePropertyPro.Api
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IPropertyTypeService, PropertyTypeService>();
+            services.AddTransient<IDealTypeService, DealTypeService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             services.AddAuthentication(opt =>

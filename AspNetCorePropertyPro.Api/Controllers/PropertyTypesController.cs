@@ -17,21 +17,20 @@ namespace AspNetCorePropertyPro.Api.Controllers
     {
         private readonly IPropertyTypeService _propertyTypeService;
         private readonly IMapper _mapper;
-        public PropertyTypesController(IMapper mapper)
+        public PropertyTypesController(IPropertyTypeService propertyTypeService, IMapper mapper)
         {
             _mapper = mapper;
-        }
-        public PropertyTypesController(IPropertyTypeService propertyTypeService)
-        {
             _propertyTypeService = propertyTypeService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetPropertyTypes()
         {
-            var propertyType = await _propertyTypeService.GetAllPropertTypes();
+            var propertyTypes = await _propertyTypeService.GetAllPropertTypes();
 
-            return Ok(propertyType);
+            var propertyTypeResource = _mapper.Map<IEnumerable<PropertyTypeResource>>(propertyTypes);
+
+            return Ok(propertyTypeResource);
         }
 
         [HttpGet("{id}")]
@@ -42,7 +41,9 @@ namespace AspNetCorePropertyPro.Api.Controllers
             if (propertyType == null)
                 return NotFound("The property type does not exists");
 
-            return Ok(propertyType);
+            var propertyTypeResource = _mapper.Map<PropertyTypeResource>(propertyType);
+
+            return Ok(propertyTypeResource);
         }
 
         [HttpPost]
@@ -57,7 +58,9 @@ namespace AspNetCorePropertyPro.Api.Controllers
 
             var result = await _propertyTypeService.CreatePropertyType(propertyType);
 
-            return Ok(result);
+            var propertyTypeResource = _mapper.Map<PropertyTypeResource>(result);
+
+            return Ok(propertyTypeResource);
         }
         [HttpPatch("{id}")]
         public async Task<IActionResult> UpdatePropertyType([FromBody] SavePropertyTypeResource resource, [FromQuery] int id)
@@ -71,7 +74,9 @@ namespace AspNetCorePropertyPro.Api.Controllers
 
             var result = await _propertyTypeService.UpdatePropertyType(propertyTypeToUpdate, propertyType);
 
-            return Ok(result);
+            var propertyTypeResource = _mapper.Map<PropertyTypeResource>(result);
+
+            return Ok(propertyTypeResource);
         }
 
         [HttpDelete("{id}")]

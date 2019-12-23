@@ -37,7 +37,8 @@ namespace AspNetCorePropertyPro.Services
 
         public async Task<PropertyType> FindPropertyTypeByName(string name)
         {
-            return await _unitOfWork.PropertyTypes.SingleorDefaultAsync(pt => pt.Name.ToLower() == name.ToLower());
+            return await _unitOfWork.PropertyTypes.SingleorDefaultAsync(pt => 
+                pt.Name.ToLower() == name.ToLower());
         }
 
         public async Task<IEnumerable<PropertyType>> GetAllPropertTypes()

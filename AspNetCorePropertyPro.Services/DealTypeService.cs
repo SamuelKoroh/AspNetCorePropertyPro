@@ -29,6 +29,22 @@ namespace AspNetCorePropertyPro.Services
             await _unitOfWork.CommitAsync();
         }
 
+        public async Task<DealType> FindDealTypeById(int id)
+        {
+            return await _unitOfWork.DealTypes.GetById(id);
+        }
+
+        public async Task<DealType> FindDealTypeByName(string name)
+        {
+            return await _unitOfWork.DealTypes.SingleorDefaultAsync(pt =>
+                pt.Name.ToLower() == name.ToLower());
+        }
+
+        public async Task<IEnumerable<DealType>> GetAllDealType()
+        {
+            return await _unitOfWork.DealTypes.GetAllAsync();
+        }
+
         public async Task<DealType> UpdateDealType(DealType dealTypeToUpdate, DealType dealType)
         {
             dealTypeToUpdate.Id = dealType.Id;
