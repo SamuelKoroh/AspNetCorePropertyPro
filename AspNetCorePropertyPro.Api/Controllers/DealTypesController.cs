@@ -34,7 +34,7 @@ namespace AspNetCorePropertyPro.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetDealType([FromQuery] int id)
+        public async Task<IActionResult> GetDealType(int id)
         {
             var dealType = await _dealTypeService.FindDealTypeById(id);
 
@@ -63,7 +63,7 @@ namespace AspNetCorePropertyPro.Api.Controllers
             return Ok(dealTypeResource);
         }
         [HttpPatch("{id}")]
-        public async Task<IActionResult> UpdatePropertyType([FromBody] SaveDealTypeResource resource, [FromQuery] int id)
+        public async Task<IActionResult> UpdatePropertyType([FromBody] SaveDealTypeResource resource, int id)
         {
             var dealTypeToUpdate = await _dealTypeService.FindDealTypeById(id);
 
@@ -80,7 +80,7 @@ namespace AspNetCorePropertyPro.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePropertyType([FromQuery] int id)
+        public async Task<IActionResult> DeletePropertyType(int id)
         {
             var dealType = await _dealTypeService.FindDealTypeById(id);
 

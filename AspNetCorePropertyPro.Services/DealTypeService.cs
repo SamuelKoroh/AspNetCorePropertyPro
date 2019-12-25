@@ -47,13 +47,12 @@ namespace AspNetCorePropertyPro.Services
 
         public async Task<DealType> UpdateDealType(DealType dealTypeToUpdate, DealType dealType)
         {
-            dealTypeToUpdate.Id = dealType.Id;
             dealTypeToUpdate.Name = dealType.Name;
             dealTypeToUpdate.Description = dealType.Description;
 
             await _unitOfWork.CommitAsync();
 
-            return dealType;
+            return dealTypeToUpdate;
         }
     }
 }

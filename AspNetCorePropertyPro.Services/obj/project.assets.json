@@ -673,7 +673,7 @@
   },
   "libraries": {
     "CloudinaryDotNet/1.9.1": {
-      "sha512": "E5nJnmmBiKcbnhNhjWai5STm+8lOgSwlbCiHJ10IOnFN4dkIyhi8IyswT5bESEPo2dDG7Jt/0JESoQVUPz4lIg==",
+      "sha512": "mXc2vt86ib/Ab2Fx2Eb0apIhmopK0BsZZ8h9QyyS5SQG98oFjHrUIeCkpFWtyO+OoawmvBtJi6LpQINXCqYFCQ==",
       "type": "package",
       "path": "cloudinarydotnet/1.9.1",
       "files": [
@@ -1627,25 +1627,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC\\.nuget\\packages\\": {},
+    "C:\\Users\\Sam\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Services\\AspNetCorePropertyPro.Services.csproj",
+      "projectUniqueName": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Services\\AspNetCorePropertyPro.Services.csproj",
       "projectName": "AspNetCorePropertyPro.Services",
-      "projectPath": "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Services\\AspNetCorePropertyPro.Services.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Services\\obj\\",
+      "projectPath": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Services\\AspNetCorePropertyPro.Services.csproj",
+      "packagesPath": "C:\\Users\\Sam\\.nuget\\packages\\",
+      "outputPath": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1659,11 +1659,11 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Configuration\\AspNetCorePropertyPro.Configuration.csproj": {
-              "projectPath": "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Configuration\\AspNetCorePropertyPro.Configuration.csproj"
+            "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Configuration\\AspNetCorePropertyPro.Configuration.csproj": {
+              "projectPath": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Configuration\\AspNetCorePropertyPro.Configuration.csproj"
             },
-            "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj": {
-              "projectPath": "C:\\Demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj"
+            "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj": {
+              "projectPath": "C:\\demo\\AspNetCore\\AspNetCorePropertyPro\\AspNetCorePropertyPro.Core\\AspNetCorePropertyPro.Core.csproj"
             }
           }
         }
@@ -1712,6 +1712,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.0.1, 3.0.1]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

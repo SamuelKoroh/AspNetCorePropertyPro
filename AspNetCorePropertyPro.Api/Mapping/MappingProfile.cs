@@ -19,7 +19,7 @@ namespace AspNetCorePropertyPro.Api.Mapping
                 .ForMember(d => d.UserName, opt => opt.MapFrom(s => s.Email));
 
             CreateMap<SavePropertyTypeResource, PropertyType>();
-            CreateMap<DealTypeResource, DealType>();
+            CreateMap<SaveDealTypeResource, DealType>();
 
 
             //Domain Model to Resource

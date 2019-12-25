@@ -48,12 +48,12 @@ namespace AspNetCorePropertyPro.Services
 
         public async Task<PropertyType> UpdatePropertyType(PropertyType propertyTypeToUpdate, PropertyType propertyType)
         {
-            propertyTypeToUpdate.Id = propertyType.Id;
             propertyTypeToUpdate.Name = propertyType.Name;
             propertyTypeToUpdate.Description = propertyType.Description;
 
             await _unitOfWork.CommitAsync();
-            return propertyType;
+
+            return propertyTypeToUpdate;
         }
     }
 }

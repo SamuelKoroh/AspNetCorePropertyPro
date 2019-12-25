@@ -46,7 +46,6 @@ namespace AspNetCorePropertyPro.Services
 
         public async Task<Property> UpdateProperty(Property propertyToUpdate, Property property)
         {
-            propertyToUpdate.Id = property.Id;
             propertyToUpdate.Title = property.Title;
             propertyToUpdate.Price = property.Price;
             propertyToUpdate.City = property.City;
@@ -58,7 +57,7 @@ namespace AspNetCorePropertyPro.Services
 
             await _unitOfWork.CommitAsync();
 
-            return property;
+            return propertyToUpdate;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace AspNetCorePropertyPro.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPropertyType([FromQuery] int id)
+        public async Task<IActionResult> GetPropertyType(int id)
         {
             var propertyType = await _propertyTypeService.FindPropertyTypeById(id);
 
@@ -63,7 +63,7 @@ namespace AspNetCorePropertyPro.Api.Controllers
             return Ok(propertyTypeResource);
         }
         [HttpPatch("{id}")]
-        public async Task<IActionResult> UpdatePropertyType([FromBody] SavePropertyTypeResource resource, [FromQuery] int id)
+        public async Task<IActionResult> UpdatePropertyType([FromBody] SavePropertyTypeResource resource, int id)
         {
             var propertyTypeToUpdate = await _propertyTypeService.FindPropertyTypeById(id);
 
@@ -80,7 +80,7 @@ namespace AspNetCorePropertyPro.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePropertyType([FromQuery] int id)
+        public async Task<IActionResult> DeletePropertyType(int id)
         {
             var propertyType = await _propertyTypeService.FindPropertyTypeById(id);
 
