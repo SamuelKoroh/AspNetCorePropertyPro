@@ -28,6 +28,11 @@ namespace AspNetCorePropertyPro.Data.Repositories
             await Context.AddRangeAsync(entities);
         }
 
+        public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await Context.Set<TEntity>().AnyAsync(predicate);
+        }
+
         public async Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate)
         {
             return await Context.Set<TEntity>().Where(predicate).ToListAsync();

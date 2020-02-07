@@ -11,7 +11,8 @@ namespace AspNetCorePropertyPro.Core.Services
         Task<IEnumerable<Property>> GetAllProperty();
         Task<IEnumerable<Property>> GetPropertiesByOwnerId(string ownerId);
         Task<Property> GetPropertById(int id);
-        Task<Property> CreateProperty(Property newProperty);
+        Task<bool> CheckIfPropertyTitleExists(string title);
+        Task<Property> CreateProperty(Property newProperty, string  userId);
         Task<Property> UpdateProperty(Property propertyToUpdate, Property property);
         Task DeleteProperty(Property property);
     }

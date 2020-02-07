@@ -17,11 +17,11 @@ namespace AspNetCorePropertyPro.Data
         }
 
         public DbSet<Property> Properties { get; set; }
-        public DbSet <Favourite> Favourites { get; set; }
-        public DbSet <Flag> Flags { get; set; }
-        public DbSet <PropertyType> PropertyTypes { get; set; }
-        public DbSet <DealType> DealTypes { get; set; }
-        public DbSet <PropertyImage> PropertyImages { get; set; }
+        public DbSet<Favourite> Favourites { get; set; }
+        public DbSet<Flag> Flags { get; set; }
+        public DbSet<PropertyType> PropertyTypes { get; set; }
+        public DbSet<DealType> DealTypes { get; set; }
+        public DbSet<PropertyImage> PropertyImages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -34,11 +34,14 @@ namespace AspNetCorePropertyPro.Data
             builder.ApplyConfiguration(new PropertyImageConfiguration());
             base.OnModelCreating(builder);
         }
+
+        public static string connStr;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var conn = @"server=(localdb)\mssqllocaldb; database=pptenantone; integrated security=true";
+            var conn =  _tenant.ConnectionString;
+            //var conn = @"Server=(localDB)\MSSqlLocalDB; database=TenantOne; Integrated Security=true";
+            //optionsBuilder.UseSqlServer(conn);
             optionsBuilder.UseSqlServer(conn);
-            //optionsBuilder.UseSqlServer(_tenant.ConnectionString);
             base.OnConfiguring(optionsBuilder);
         }
     }

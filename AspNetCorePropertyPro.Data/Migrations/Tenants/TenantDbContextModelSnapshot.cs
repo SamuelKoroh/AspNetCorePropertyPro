@@ -195,6 +195,9 @@ namespace AspNetCorePropertyPro.Data.Migrations.Tenants
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
+                    b.Property<DateTime?>("DateAdded")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("DealTypeId")
                         .HasColumnType("int");
 
@@ -204,6 +207,9 @@ namespace AspNetCorePropertyPro.Data.Migrations.Tenants
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastUpdatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("OwnerId")
                         .HasColumnType("nvarchar(450)");
@@ -217,7 +223,14 @@ namespace AspNetCorePropertyPro.Data.Migrations.Tenants
                         .HasMaxLength(100);
 
                     b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(15)")
+                        .HasMaxLength(15);
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<int>("TypeId")
                         .HasColumnType("int");
@@ -241,6 +254,11 @@ namespace AspNetCorePropertyPro.Data.Migrations.Tenants
                         .HasAnnotation("SqlServer:IdentityIncrement", 1)
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsMain")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("PropertyId")
                         .HasColumnType("int");

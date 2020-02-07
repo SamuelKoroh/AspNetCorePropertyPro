@@ -10,4 +10,5 @@ namespace AspNetCorePropertyPro.Data
             : base(options){}
 
     }
+
 }

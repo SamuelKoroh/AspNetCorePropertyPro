@@ -28,7 +28,8 @@ namespace AspNetCorePropertyPro.Core.Models
         public string Description { get; set; }
         public ApplicationUser Owner { get; set; }
         public string OwnerId { get; set; }
-
+        public DateTime? DateAdded { get; set; }
+        public DateTime? LastUpdatedDate { get; set; }
         public ICollection<Flag> Flags { get; set; }
         public ICollection<Favourite> Favourites { get; set; }
         public ICollection<PropertyImage> PropertyImages { get; set; }

@@ -1,4 +1,5 @@
 ﻿using AspNetCorePropertyPro.Configuration;
+using AspNetCorePropertyPro.Configuration.Constants;
 using AspNetCorePropertyPro.Core.Models;
 using AspNetCorePropertyPro.Core.Response;
 using AspNetCorePropertyPro.Core.Services;
@@ -13,6 +14,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace AspNetCorePropertyPro.Services
 {
@@ -50,14 +52,14 @@ namespace AspNetCorePropertyPro.Services
 
         public async Task<BaseResponse> ConfirmEmailAsync(string userId, string code)
         {
-            var token = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
+//var token = code = HttpUtility.UrlDecode(code); ;
 
             var user = await _userManager.FindByIdAsync(userId);
 
             if (user == null)
                 return new BaseResponse { Message = "The account does not exist" };
 
-            var result = await _userManager.ConfirmEmailAsync(user, token);
+            var result = await _userManager.ConfirmEmailAsync(user, code);
 
             if (!result.Succeeded)
                 return new BaseResponse { Message = result.Errors.Select(x => x.Description) };
@@ -76,7 +78,7 @@ namespace AspNetCorePropertyPro.Services
             var code = await _userManager.GeneratePasswordResetTokenAsync(user);
             var token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-            var callBackUrl = $"https://localhost:5001/api/auth/reset-password?userId={user.Id}&code={token}";
+            var callBackUrl = $"{Links.ClientBaseUrl}/reset-password?userId={user.Id}&code={token}";
 
             var body = await File.ReadAllTextAsync("Assests/Templates/reset-password.html");
             body = body.Replace("##Name", user.FirstName);
@@ -112,17 +114,21 @@ namespace AspNetCorePropertyPro.Services
             if (!result.Succeeded)
                 return new BaseResponse { Message = result.Errors.Select(x => x.Description) };
 
-            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-            var callBackUrl = $"https://localhost:5001/api/auth/confirm?userId={user.Id}&code={code}";
-
-            var body = await File.ReadAllTextAsync("Assests/Templates/confirm-email.html");
-            body = body.Replace("##Name", user.FirstName);
-            body = body.Replace("##callBackUrl", callBackUrl);
-
-            await _emailService.SendMailAsync(user.Email, "Confirm Email", body);
+            await SendEmailConfirmEmail(user);
 
             return new BaseResponse { Succeeded = true, Message = "Confirmation link has been sent to your mail", Data = CreateUserToken(user) };
+        }
+
+        public async Task<BaseResponse> ResendConfirmationEmailAsync(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null)
+                return new BaseResponse { Message = "The account doesn't exist" };
+
+            await SendEmailConfirmEmail(user);
+
+            return new BaseResponse { Succeeded = true, Message = "Confirmation link has been sent to your mail"};
         }
 
         public async Task<BaseResponse> ResetPasswordAsync(string userId, string code, string password)
@@ -165,6 +171,20 @@ namespace AspNetCorePropertyPro.Services
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
+        }
+        private async Task SendEmailConfirmEmail(ApplicationUser user)
+        {
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            code = HttpUtility.UrlEncode(code);
+
+            var callBackUrl = $"{Links.ClientBaseUrl}/confirm?userId={user.Id}&code={code}";
+
+            var body = await File.ReadAllTextAsync("Assests/Templates/confirm-email.html");
+
+            body = body.Replace("##Name", user.FirstName);
+            body = body.Replace("##callBackUrl", callBackUrl);
+
+            await _emailService.SendMailAsync(user.Email, "Confirm Email", body);
         }
     }
 }

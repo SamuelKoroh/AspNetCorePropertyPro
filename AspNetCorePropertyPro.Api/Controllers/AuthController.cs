@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AspNetCorePropertyPro.Api.Extensions;
 using AspNetCorePropertyPro.Api.Resources;
+using AspNetCorePropertyPro.Configuration.Utils;
 using AspNetCorePropertyPro.Core.Models;
 using AspNetCorePropertyPro.Core.Services;
 using AutoMapper;
@@ -20,11 +21,12 @@ namespace AspNetCorePropertyPro.Api.Controllers
     {
         private readonly IAuthService _authService;
         private readonly IMapper _mapper;
-
-        public AuthController(IAuthService authService, IMapper mapper)
+        private readonly IResponse _response;
+        public AuthController(IAuthService authService, IMapper mapper, IResponse response)
         {
             _authService = authService;
             _mapper = mapper;
+            _response = response;
         }
         /// <summary>
         /// Register new site user
@@ -37,7 +39,7 @@ namespace AspNetCorePropertyPro.Api.Controllers
         ///         "firstName": "john",
         ///         "lastName":"doe",
         ///         "address": "address of john doe",
-        ///         "phone": "2348098585647",
+        ///         "phoneNumber": "2348098585647",
         ///         "email": "johndoe@mail.com",
         ///         "password": "Password@13493"
         ///     }
@@ -56,9 +58,9 @@ namespace AspNetCorePropertyPro.Api.Controllers
             var result = await _authService.RegisterAsync(user, registerResource.Password);
 
             if (!result.Succeeded)
-                return BadRequest(result);
+                return BadRequest(_response.Error(result.Message));
 
-            return Ok(result.Message);
+            return Ok(_response.Ok(result.Message));
         }
 
         [HttpPost("confirm-email")]
@@ -69,9 +71,9 @@ namespace AspNetCorePropertyPro.Api.Controllers
             var result = await _authService.ConfirmEmailAsync(confirmEmailResource.UserId, confirmEmailResource.Code);
 
             if (!result.Succeeded)
-                return BadRequest(result);
+                return BadRequest(_response.Error(result.Message));
 
-            return Ok(result.Message);
+            return Ok(_response.Ok(result.Message));
         }
 
         [HttpPost("login")]
@@ -82,9 +84,22 @@ namespace AspNetCorePropertyPro.Api.Controllers
             var result = await _authService.LoginAsync(loginResource.Email, loginResource.Password);
 
             if (!result.Succeeded)
-                return BadRequest(result);
+                return BadRequest(_response.Error(result));
 
-            return Ok(result);
+            return Ok(_response.Ok(result.Data));
+        }
+
+        [HttpPost("resend-confirmation-email")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> ResendConfirmationEmail([FromBody] ForgetPasswordResource resource)
+        {
+            var result = await _authService.ResendConfirmationEmailAsync(resource.Email);
+
+            if (!result.Succeeded)
+                return BadRequest(_response.Error(result.Message));
+
+            return Ok(_response.Ok(result.Message));
         }
 
         [HttpPost("forget-password")]
@@ -95,9 +110,9 @@ namespace AspNetCorePropertyPro.Api.Controllers
             var result = await _authService.ForgetPasswordAsync(resource.Email);
 
             if (!result.Succeeded)
-                return BadRequest(result);
+                return BadRequest(_response.Error(result));
 
-            return Ok(result);
+            return Ok(_response.Ok(result.Data));
         }
 
         [HttpPost("reset-password")]
@@ -108,9 +123,9 @@ namespace AspNetCorePropertyPro.Api.Controllers
             var result = await _authService.ResetPasswordAsync(resource.UserId, resource.Code, resource.Password);
 
             if (!result.Succeeded)
-                return BadRequest(result);
+                return BadRequest(_response.Error(result.Message));
 
-            return Ok(result);
+            return Ok(_response.Ok(result.Data));
         }
 
         [HttpPost("change-password")]
@@ -120,13 +135,12 @@ namespace AspNetCorePropertyPro.Api.Controllers
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordResource resource)
         {
             var userId = User.GetUserId();
-
             var result = await _authService.ChangePasswordAsync(userId, resource.OldPassword, resource.NewPassword);
 
             if (!result.Succeeded)
-                return BadRequest(result);
+                return BadRequest(_response.Error(result.Message));
 
-            return Ok(result);
+            return Ok(_response.Ok(result.Data));
         }
     }
 }

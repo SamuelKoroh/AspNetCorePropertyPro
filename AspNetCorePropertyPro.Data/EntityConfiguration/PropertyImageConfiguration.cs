@@ -17,6 +17,7 @@ namespace AspNetCorePropertyPro.Data.EntityConfiguration
             builder.Property(x => x.Secure_Url).IsRequired();
             builder.Property(x => x.Url).IsRequired();
             builder.Property(x => x.Public_Id).IsRequired();
+            builder.Property(x => x.IsMain).HasDefaultValue(false);
 
             builder.HasOne(x => x.Property).WithMany(x => x.PropertyImages)
                 .HasForeignKey(x => x.PropertyId).OnDelete(DeleteBehavior.Cascade);

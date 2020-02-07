@@ -11,6 +11,7 @@ namespace AspNetCorePropertyPro.Core.Models
         public string Public_Id { get; set; }
         public string Url { get; set; }
         public string Secure_Url { get; set; }
+        public bool IsMain { get; set; }
         public Property Property { get; set; }
         public int PropertyId { get; set; }
     }

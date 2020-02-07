@@ -15,31 +15,59 @@ namespace AspNetCorePropertyPro.Services
     public class PropertyImageService : IPropertyImageService
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IOptions<CloudinarySetting> _cloudinarySetting;
 
-        public PropertyImageService(IUnitOfWork unitOfWork, IOptions<CloudinarySetting> cloudinarySetting)
+        public PropertyImageService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _cloudinarySetting = cloudinarySetting;
-        }
-        public Task<PropertyImage> CreatePropertyImage(PropertyImage propertyImage)
-        {
-            var account = new Account(_cloudinarySetting.Value.CloudName, 
-                _cloudinarySetting.Value.ApiKey, _cloudinarySetting.Value.ApiSecret);
-
-            var cloudinary = new Cloudinary(account);
-
-            throw new NotImplementedException();
         }
 
-        public Task<PropertyImage> DeletePropertyImage(PropertyImage propertyImage)
+        public async Task<bool> CheckPropertyHasMainImage(int propertyId)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.PropertyImages.AnyAsync(p => p.PropertyId == propertyId && p.IsMain);
         }
 
-        public Task<PropertyImage> UpdatePropertyImage(PropertyImage propertyImageToUpdate, PropertyImage propertyImage)
+        public async Task<PropertyImage> DeletePropertyImage(PropertyImage propertyImage)
         {
-            throw new NotImplementedException();
+            _unitOfWork.PropertyImages.RemoveAsync(propertyImage);
+            await _unitOfWork.CommitAsync();
+            return propertyImage;
+        }
+
+        public async Task<PropertyImage> GetImageById(int id)
+        {
+            return await _unitOfWork.PropertyImages.GetById(id);
+        }
+
+        public async Task<IEnumerable<PropertyImage>> GetPropertyImages(int propertyId)
+        {
+            return await _unitOfWork.PropertyImages.Find(p => p.PropertyId == propertyId);
+        }
+
+        public async Task<PropertyImage> GetPropertyMainImage(int propertyId)
+        {
+            return await _unitOfWork.PropertyImages.SingleorDefaultAsync(p => p.PropertyId == propertyId && p.IsMain);
+        }
+
+        public async Task<PropertyImage> SavePropertyImage(int propertyId, ImageUploadResult imageUploadResult)
+        {
+            var propertyImage = new PropertyImage
+            {
+                PropertyId = propertyId,
+                Public_Id = imageUploadResult.PublicId,
+                Secure_Url = imageUploadResult.SecureUri.ToString(),
+                Url = imageUploadResult.Uri.ToString()
+            };
+
+            await _unitOfWork.PropertyImages.AddAsync(propertyImage);
+            await _unitOfWork.CommitAsync();
+            return propertyImage;
+        }
+
+        public async Task<PropertyImage> ToggleMainImageState(PropertyImage propertyImage)
+        {
+            propertyImage.IsMain = !propertyImage.IsMain;
+            await _unitOfWork.CommitAsync();
+            return propertyImage;
         }
     }
 }

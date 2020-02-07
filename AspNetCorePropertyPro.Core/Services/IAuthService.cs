@@ -11,6 +11,7 @@ namespace AspNetCorePropertyPro.Core.Services
         Task<BaseResponse> LoginAsync(string email, string password);
         Task<BaseResponse> ForgetPasswordAsync(string email);
         Task<BaseResponse> ResetPasswordAsync( string userId, string code, string password);
+        Task<BaseResponse> ResendConfirmationEmailAsync(string email);
         Task<BaseResponse> ChangePasswordAsync( string userId, string oldPassword, string newPassword);
     }
 }

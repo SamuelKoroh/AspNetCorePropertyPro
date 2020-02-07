@@ -31,6 +31,11 @@ using AspNetCorePropertyPro.Core.Repositories;
 using AspNetCorePropertyPro.Data.Repositories;
 using Microsoft.Extensions.Options;
 using AspNetCorePropertyPro.Core;
+using FluentValidation.AspNetCore;
+using AspNetCorePropertyPro.Api.Resources.Response;
+using AspNetCorePropertyPro.Configuration.Utils;
+using AspNetCorePropertyPro.Api.Extensions;
+using Hangfire;
 
 namespace AspNetCorePropertyPro.Api
 {
@@ -46,19 +51,49 @@ namespace AspNetCorePropertyPro.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));
             services.Configure<SendGridSetting>(Configuration.GetSection("SendGridSetting"));
             services.Configure<CloudinarySetting>(Configuration.GetSection("CloudinarySetting"));
-
-            services.AddDbContext<GlobalDbContext>(c => 
+            services.AddCors();
+            services.AddAutoMapper(typeof(Startup).Assembly);
+            services.AddDbContext<TenantDbContext>();
+            services.AddDbContext<GlobalDbContext>(c =>
                 c.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<TenantDbContext>();
 
-            services.AddCors();
-            services.AddControllers();
-            services.AddAutoMapper(typeof(Startup).Assembly);
+            services.AddControllers()
+                .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+                .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+            services.AddHangfire(config => {
+                config
+                .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+                .UseSimpleAssemblyNameTypeSerializer()
+                .UseRecommendedSerializerSettings();
+            });
+            //services.AddHangfireServer();
+
+            services.Configure<ApiBehaviorOptions>(opt =>
+            {
+                opt.InvalidModelStateResponseFactory = (context) =>
+                {
+                    var errorsInModelState = context.ModelState.Where(x => x.Value.Errors.Count > 0)
+                    .ToDictionary(x => x.Key, x => x.Value.Errors.Select(x => x.ErrorMessage))
+                    .ToArray();
+
+                    var errorResponse = new ErrorResponse();
+
+                    foreach (var error in errorsInModelState)
+                        foreach (var subError in error.Value)
+                            errorResponse.Errors.Add(new ErrorModel
+                            {
+                                FieldName = error.Key,
+                                Message = subError
+                            });
+
+                    return new BadRequestObjectResult(errorResponse);
+                };
+            });
 
             services.AddIdentity<ApplicationUser, IdentityRole>(
                 opt =>
@@ -68,18 +103,30 @@ namespace AspNetCorePropertyPro.Api
                 .AddEntityFrameworkStores<TenantDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IPropertyTypeService, PropertyTypeService>();
             services.AddTransient<IDealTypeService, DealTypeService>();
+            services.AddTransient<IPropertyImageService, PropertyImageService>();
+            services.AddTransient<IPropertyService, PropertyService>();
+            services.AddTransient<ICloudinaryService, CloudinaryService>();
+            services.AddTransient<IResponse, Response>();
+            services.AddTransient<IFavouriteService, FavouriteService>();
+            services.AddTransient<IFlagService, FlagService>();
+            services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<ITenantService, TenantService>();
+            services.AddScoped<IHangfireRecurringJobService, HangfireRecurringJobService>();
+
+
 
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(opt=>
+            }).AddJwtBearer(opt =>
             {
                 opt.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -107,13 +154,13 @@ namespace AspNetCorePropertyPro.Api
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
-                        new OpenApiSecurityScheme{ 
+                        new OpenApiSecurityScheme{
                         Reference = new OpenApiReference
-                        { 
+                        {
                             Type=ReferenceType.SecurityScheme,
                             Id="Bearer"
-                        } }, 
-                        new List<string>() 
+                        } },
+                        new List<string>()
                     }
                 });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -123,7 +170,7 @@ namespace AspNetCorePropertyPro.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ITenantService tenantService)
         {
             if (env.IsDevelopment())
             {
@@ -143,7 +190,7 @@ namespace AspNetCorePropertyPro.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.InitializeTenants(tenantService);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

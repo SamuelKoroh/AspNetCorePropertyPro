@@ -16,8 +16,18 @@ namespace AspNetCorePropertyPro.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<Property> CreateProperty(Property newProperty)
+
+        public async Task<bool> CheckIfPropertyTitleExists(string title)
         {
+            return await _unitOfWork.Properties.AnyAsync(x=>x.Title.Trim().ToLower() == title.Trim().ToLower());
+        }
+
+        public async Task<Property> CreateProperty(Property newProperty, string userId)
+        {
+            newProperty.OwnerId = userId;
+            newProperty.DateAdded = DateTime.Now;
+            newProperty.LastUpdatedDate = DateTime.Now;
+
             await _unitOfWork.Properties.AddAsync(newProperty);
             await _unitOfWork.CommitAsync();
             return newProperty;
@@ -31,7 +41,7 @@ namespace AspNetCorePropertyPro.Services
 
         public async Task<IEnumerable<Property>> GetAllProperty()
         {
-            return await _unitOfWork.Properties.GetAllAsync();
+            return await _unitOfWork.Properties.GetAllWithUserAsync();
         }
 
         public async Task<Property> GetPropertById(int id)
@@ -54,6 +64,7 @@ namespace AspNetCorePropertyPro.Services
             propertyToUpdate.IsActive = property.IsActive;
             propertyToUpdate.Status = property.Status;
             propertyToUpdate.Description = property.Description;
+            propertyToUpdate.LastUpdatedDate = DateTime.Now;
 
             await _unitOfWork.CommitAsync();
 

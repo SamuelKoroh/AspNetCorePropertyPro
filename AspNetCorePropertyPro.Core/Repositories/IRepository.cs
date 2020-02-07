@@ -14,6 +14,7 @@ namespace AspNetCorePropertyPro.Core.Repositories
         Task<TEntity> GetById(object id);
         Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> SingleorDefaultAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate);
         void RemoveAsync(TEntity entity);
         void RemoveRangeAsync(IEnumerable<TEntity> entities);
     }

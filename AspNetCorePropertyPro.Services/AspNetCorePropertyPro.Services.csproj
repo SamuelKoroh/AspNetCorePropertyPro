@@ -4,14 +4,17 @@
     <PackageReference Include="CloudinaryDotNet" Version="1.9.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Sendgrid" Version="9.12.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AspNetCorePropertyPro.Configuration\AspNetCorePropertyPro.Configuration.csproj" />
     <ProjectReference Include="..\AspNetCorePropertyPro.Core\AspNetCorePropertyPro.Core.csproj" />
+    <ProjectReference Include="..\AspNetCorePropertyPro.Data\AspNetCorePropertyPro.Data.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

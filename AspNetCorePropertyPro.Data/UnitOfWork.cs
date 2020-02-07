@@ -11,20 +11,25 @@ namespace AspNetCorePropertyPro.Data
     public class UnitOfWork : IUnitOfWork
     {
         private readonly TenantDbContext _context;
+        private readonly GlobalDbContext _globalDbContext;
+        private  TenantRepository _tenantRepository;
         private  PropertyRepository _propertyRepository;
         private PropertyImageRepository _propertyImageRepository;
         private DealTypeRepository _dealTypeRepository;
         private PropertyTypeRepository _propertyTypeRepository;
-        public UnitOfWork(TenantDbContext context)
+        private FavouriteRepository _favouriteRepository;
+        private FlagRepository _flagRepository;
+        public UnitOfWork(TenantDbContext context, GlobalDbContext globalDbContext)
         {
             _context = context;
+            _globalDbContext = globalDbContext;
         }
         public IDealTypeRepository DealTypes => 
             _dealTypeRepository ??= new DealTypeRepository(_context);
 
-        public IFavouriteRepository Favourites => throw new NotImplementedException();
+        public IFavouriteRepository Favourites => _favouriteRepository ??=new FavouriteRepository(_context);
 
-        public IFlagRepository Flags => throw new NotImplementedException();
+        public IFlagRepository Flags => _flagRepository ??=new FlagRepository(_context);
 
         public IPropertyRepository Properties => 
             _propertyRepository ??= new PropertyRepository(_context);
@@ -34,6 +39,7 @@ namespace AspNetCorePropertyPro.Data
         public IPropertyTypeRepository PropertyTypes => 
             _propertyTypeRepository ??= new PropertyTypeRepository(_context);
 
+        public ITenantRepository Tenants => _tenantRepository ??= new TenantRepository(_globalDbContext);
 
         public async Task<int> CommitAsync()
         {
